@@ -1,0 +1,53 @@
+MTFrac 2.0 architecture C#, VS2010
+
+Plot
+	Properties
+		int[x,y] = # iterations for each point
+		MultiRect complexBorder = Real,Complex boundaries
+		int RenderDepth = max iterations
+		LinearTransform nextPlot
+		
+	Locks
+		bmpPlot
+		plot[] rows locked - passed row by row to calc
+			lock when passing, lock when returning
+		BigInteger mode locks individual points
+		
+	Methods
+		Calc() = calculates mandlebrot iterations for each point
+		setSize(int x, int y) - must not be calculating
+		Stop, Pause, Start
+		Save(string filename)
+		Load(string filename)
+
+LinearTransform
+	Pan and Zoom of last plot to current plot
+	uses double - fractional pixels
+	
+	DoublePt offset
+	double zoom
+	
+
+
+	
+MultiRect
+	Rectangle - stores as double, decimal
+		DoublePt topLeft
+		DoublePt bottomRight
+		double height
+		double width
+		DecPt topLeftD, bottomRightD
+		decimal heightD, widthD
+
+	bool InRect(DoublePt)
+	bool InRect(DecPt)
+
+
+DoublePt
+	double x
+	double y
+DecPt	
+	decimal x
+	decimal y
+	
+	

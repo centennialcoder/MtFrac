@@ -1,0 +1,58 @@
+frmMain
+	CColoring m_Coloring
+	SeriesData m_SeriesData
+	
+
+CColoring
+	int NumColors
+	int CycleStart
+	int CycleFactor
+	eCycleType CycleType {Linear|Geometric|Exponential}
+	string ColorFile
+	Color[]ColorMap
+
+SeriesData
+	eZoomType ZoomType {ZoomIn|ZoomOut|Pan|SeriesIn|						SeriesOut|SeriesPan}
+	string SavePrefix
+	string SaveName
+	int NextSaveNum
+	int PanPix
+	float ZoomVal
+	
+RenderStatus
+	bool Rendering
+	bool CalcZoom
+	bool HasZoomed
+	bool AA
+	bool OverrideZoomType
+	TimeSpan RenderTime
+	eRender RenderStatus {Finished|InProgress}Paused|Stopped}
+	eShortCut ShortCut {RecalcAll|Pan|ZoomOut}
+
+Mandelbrot
+	eDataType DataType {Long|BigInt|Double|Decimal|...}
+	int RenderDepth
+	int PlotHt, PlotWs
+	int[] Plot
+
+	//Complex Values
+	double g_Left, g_Right, g_Top,g_Bottom
+	decimal g_DLeft, g_DRight, g_DTop, g_DBottom
+	DoublePt[] plotValues
+	DecPt[] plotDValues
+	DoublePt g_SeriesPt
+	DecPt g_DSeriesPt
+
+MandelBmp
+	//Pixels
+	int PicHt, PicWd
+	Bitmap bmpPlot
+	Bitmap bmpScreen
+	//PanZoom Rectangle
+	float PanLeft, PanTop
+	float curLeft, curTop
+	float CurWd, CurHeight
+	RectangleF PanRect
+	
+	
+	
